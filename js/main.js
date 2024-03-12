@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    /**
+    /**J
      * Author: Postigo Arévalo Javier
      * Date: 2024.03.11
      */
@@ -29,11 +29,10 @@ document.addEventListener("DOMContentLoaded", function () {
     /** Colores Form */
     const formSelect = document.querySelector("form");
     const selectFormColor = document.querySelector("select");
-    formSelect.style.backgroundColor = "lightyellow";
     selectFormColor.addEventListener("change", function () {
         formSelect.style.backgroundColor = selectFormColor.value;
     });
-    selectFormColor.dispatchEvent(new Event("input", { bubbles: true }));
+    selectFormColor.dispatchEvent(new Event("change", { bubbles: true }));
 
     /** Ajax */
     const $formSelect = $('form');
@@ -98,9 +97,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 const tipo = borrarMatch[2];
                 if (metodo === 'borra') {
                     const elements = divApartado.querySelectorAll(tipo === 'parrafo' || tipo === 'párrafo' ? 'p' : 'h1');
-                    if (elements.length > 0) {
-                        elements[elements.length - 1].remove();
-                    }
+                    elements.forEach(element => {
+                        element.remove();
+                    });
                 }
             }
         }
