@@ -16,11 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const textAreaForm = document.querySelector("textarea");
     textAreaForm.innerText = 'Postigo';
 
-    const reset = document.querySelector("input[type=submit]");
-    reset.addEventListener("click", function () { 
-        textAreaForm.innerText = '';
-
-     })
+  
     /** Fecha DOM */
     const date = new Date().toLocaleDateString();
     const span = document.querySelector("h3 span");
